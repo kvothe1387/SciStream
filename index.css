@@ -19,6 +19,26 @@ main {
   gap: 1em;
 }
 
+@media (min-width: 500px) {
+  main {
+    display: grid;
+    grid-template: 1fr 1fr;
+  }
+
+  .technology,
+  .health {
+    grid-column: span 2;
+  }
+
+  .environment {
+    grid-column: span 1;
+  }
+
+  .nasa {
+    grid-row: span 2;
+  }
+}
+
 /* =================
     Article Card 
    ================= */
