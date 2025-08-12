@@ -5,6 +5,20 @@ body {
   font-family: 'Manrope', sans-serif;
 }
 
+body {
+  margin: 1em;
+}
+
+/* =================
+    Layout
+   ================= */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
 /* =================
     Article Card 
    ================= */
