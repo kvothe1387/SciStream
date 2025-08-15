@@ -5,13 +5,46 @@ body {
   font-family: 'Manrope', sans-serif;
 }
 
-body {
-  margin: 1em;
-}
-
 /* =================
     Layout
    ================= */
+
+body {
+  display: grid;
+  grid-template-columns: 1em 1fr 1em;
+  grid-template-areas:
+    ".... .... ...."
+    ".... head ...."
+    ".... main ...."
+    ".... foot ...."
+    ".... .... ....";
+  gap: 1em 0;
+}
+
+.site-header {
+  grid-area: head;
+}
+
+footer {
+  grid-area: foot;
+}
+
+/* =================
+    Main Element Layout 
+   ================= */
+
+main {
+  grid-area: main;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "tech"
+    "envi"
+    "nasa"
+    "phys"
+    "heal";
+}
 
 .technology {
   grid-area: tech;
@@ -33,17 +66,6 @@ body {
   grid-area: heal;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
-  grid-template-areas:
-    "tech"
-    "envi"
-    "nasa"
-    "phys"
-    "heal";
-}
 
 @media (min-width: 500px) {
   main {
@@ -58,7 +80,7 @@ main {
 
 @media (min-width: 870px) {
   main {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(9, 1fr) repeat(3, minmax(70px, 1fr));
     grid-template-areas:
       "tech tech tech tech tech tech envi envi envi nasa nasa nasa"
       "phys phys phys heal heal heal heal heal heal nasa nasa nasa";
